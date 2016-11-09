@@ -1,24 +1,53 @@
 // Task 1: Create a function that randomly chooses among 'rock', 'paper', or 'scissors'.
-var generateComputerChoice = function () {
+var generateComputerChoice = function() {
     // Task 1, Step 1: Create an array with three elements ("rock", "paper" and "scissors").
-
+    var array = ["rock", "paper", "scissors"];
     // Task 1, Step 2: Use the JavaScript Math function to generate a random whole
     // number between 0 and 2. Be sure to save it to a variable.
-
+    var myNumber = Math.floor(Math.random() * 3);
     // Task 1, Step 3: Use this randomly generated number to pull a value from the
     // array (eg myArray[randomNum])
-
+    var myNewValue = array[myNumber];
+    console.log(array[myNumber]);
+    console.log(myNumber);
     // Task 1, Step 4: return this new value
+    return myNewValue;
 };
 
 // Task 2: Create a function that compares the userChoice and the computerChoice
 // to decide who won.
-var pickWinner = function (userChoice, computerChoice) {
+var pickWinner = function(userChoice, computerChoice) {
     console.log("user choice: " + userChoice);
     console.log("computer choice: " + computerChoice);
     // Task 2, Step 1: Create an "if/else if/else" statement that compares the
     // userChoice and computerChoice under any possible game outcome.
-
+    
+    if (userChoice === computerChoice) {
+    console.log("tie");
+    }
+    else if (userChoice == "paper" && computerChoice == "rock"){
+        console.log("user wins");
+    }
+    else if (userChoice == "paper" && computerChoice == "scissors"){
+        console.log("computer wins");
+    }
+    else if (userChoice == "scissors" && computerChoice == "paper"){
+        console.log("user wins");
+    }
+    else if (userChoice == "scissors" && computerChoice == "rock"){
+        console.log("computer wins");
+    }
+    else if (userChoice == "rock" && computerChoice == "scissors"){
+        console.log("user wins");
+    }
+    else if (userChoice == "rock" && computerChoice == "paper"){
+        console.log("computer wins");
+    }
+    
+    
+    
+    
+    
     // Task 2, Step 2: Depending on who is the winner of the game console.log
     // either "user wins", "computer wins" or "draw"
 
